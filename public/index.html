@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Event List</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
   </head>
   <body>
     <table>
@@ -13,7 +15,9 @@
         <th>End date</th>
         <th>Actions</th>
       </tr>
-      <tr>
+
+    <div id='event-container'>
+        <tr>
         <td>
           <input disabled value="TEST-3" />
         </td>
@@ -24,17 +28,19 @@
           <input disabled />
         </td>
         <td>
-          <button>EDIT</button>
-          <button>DELETE</button>
+          <button class='edit'>EDIT</button>
+          <button class='delete'>DELETE</button>
         </td>
       </tr>
+    </div>
+
     </table>
 
-    <script>
+       <script>
       // Get all Events
       fetch("http://localhost:3000/events")
         .then((response) => response.json())
-        .then((json) => console.log(json));
+        .then((json) => console.log('GET=>',json));
 
       // Create a new Event
       fetch("http://localhost:3000/events", {
@@ -50,7 +56,7 @@
         }),
       })
         .then((response) => response.json())
-        .then((json) => console.log(json));
+        .then((json) => console.log('post=>',json));
 
       // Delete an exist Event
       fetch("http://localhost:3000/events/1", {
@@ -61,7 +67,7 @@
         },
       })
         .then((response) => response.json())
-        .then((json) => console.log(json));
+        .then((json) => console.log('DELETE=>',json));
 
       //   // Update an exist Event
       fetch("http://localhost:3000/events/2", {
@@ -77,7 +83,7 @@
         }),
       })
         .then((response) => response.json())
-        .then((json) => console.log(json));
+        .then((json) => console.log('UPDATE=>',json));
     </script>
   </body>
 </html>
