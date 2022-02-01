@@ -7,7 +7,7 @@ const View=(()=>{
   const domStr={
     eventList:'#eventlist-container',
     editBtn:'.edit',
-    deleteBtn:'.delete',
+    deleteBtn:'.delete'
   };
 
   const render=(element,template)=>{
@@ -30,7 +30,7 @@ const View=(()=>{
           <input type="date" value="${eachEl.endDate}" />
         </td>
         <td>
-          <button class='edit' id="${eaclEl.id}">EDIT</button>
+          <button class='edit'id="${eaclEl.id}">EDIT</button>
           <button class='delete' id='${eachEl.id}">DELETE</button>
         </td>
       </tr>`;

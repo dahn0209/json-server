@@ -3,7 +3,96 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EventList</title>
+    <title>Event List</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
   </head>
-  <body></body>
+  <body>
+    <main class='content'>
+      <table class='eventlist'>
+        <header class='eventlist-header'>
+          <tr>
+            <th>Event Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Actions</th>
+          </tr>
+        </header>
+        <section id='eventlist-container'>
+   <!--   <tr>
+            <td>
+              <input disabled value="TEST-3" />
+            </td>
+            <td>
+              <input type="date"    value="2020-01-08" />
+            </td>
+            <td>
+              <input disabled />
+            </td>
+            <td>
+              <button
+                class='edit'>
+                EDIT
+              </button>
+              <button
+                class='delete'>
+                DELETE
+              </button>
+            </td>
+          </tr> -->
+        </section>
+
+      </table>
+    </main>
+
+    <script>
+      // // Get all Events
+      // fetch("http://localhost:3000/events")
+      //   .then((response) => response.json())
+      //   .then((json) => console.log('GET=>',json));
+
+      // // Create a new Event
+      // fetch("http://localhost:3000/events", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //     Accept: "application/json",
+      //   },
+      //   body: JSON.stringify({
+      //     eventName: "TEST",
+      //     startDate: "1641790800000",
+      //     endDate: "1641790800000",
+      //   }),
+      // })
+      //   .then((response) => response.json())
+      //   .then((json) => console.log('post=>',json));
+
+      // // Delete an exist Event
+      // fetch("http://localhost:3000/events/1", {
+      //   method: "DELETE",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //     Accept: "application/json",
+      //   },
+      // })
+      //   .then((response) => response.json())
+      //   .then((json) => console.log('DELETE=>',json));
+
+      // //   // Update an exist Event
+      // fetch("http://localhost:3000/events/2", {
+      //   method: "PUT",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //     Accept: "application/json",
+      //   },
+      //   body: JSON.stringify({
+      //     eventName: "TEST-CHANGED",
+      //     startDate: "1641790800000",
+      //     endDate: "1641790800000",
+      //   }),
+      // })
+      //   .then((response) => response.json())
+      //   .then((json) => console.log('UPDATE=>',json));
+    </script>
+  </body>
 </html>
