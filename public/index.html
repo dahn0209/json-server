@@ -5,94 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Event List</title>
     <link rel="stylesheet" href="style.css" />
-    <script type='module'src="index.js"></script>
+    <script type='module'src="./index.js"></script>
   </head>
   <body>
-    <main class='content'>
-      <table class='eventlist'>
-        <header class='eventlist-header'>
+    <main class="container">
+      <section class='new-task'>
+        <header>
+          <h3>Add Task</h3>
+        </header>
+        <table>
           <tr>
-            <th>Event Name</th>
-            <th>Start Date</th>
-            <th>End Date</th>
+            <th>Event name</th>
+            <th>Start date</th>
+            <th>End date</th>
             <th>Actions</th>
           </tr>
+          <tr>
+            <td>
+              <input id="new-task" type="text">
+            </td>
+            <td>
+              <input type="date" value="2020-01-08" />
+            </td>
+            <td>
+              <input type='date' />
+            </td>
+            <td>
+              <button>Save</button>
+              <button>Close</button>
+            </td>
+          </tr>
+
+        </table>
+      </section>
+
+      <section class='task-list'>
+         <header>
+          <h3>Event List</h3>
         </header>
-        <section id='eventList-container'>
-   <!--   <tr>
-            <td>
-              <input disabled value="TEST-3" />
-            </td>
-            <td>
-              <input type="date"    value="2020-01-08" />
-            </td>
-            <td>
-              <input disabled />
-            </td>
-            <td>
-              <button
-                class='edit'>
-                EDIT
-              </button>
-              <button
-                class='delete'>
-                DELETE
-              </button>
-            </td>
-          </tr> -->
-        </section>
+        <table id='incomplete-tasks'>
 
-      </table>
+          <!-- <tr>
+            <td class='event-name'>
+              <input type="text" value='Pay Bills'>
+            </td>
+            <td class='start-date'>
+              <input type="date" value="2020-01-08" />
+            </td>
+            <td class='end-date'>
+              <input type='date' />
+            </td>
+            <td>
+              <button class='edit'>Edit</button>
+              <button class='delete'>Delete</button>
+            </td>
+        </tr>
+        <tr class='edit-mode'>
+            <td>
+              <input type="text" value='Go Shopping'>
+            </td>
+            <td>
+              <input type="date" value="2020-01-08" />
+            </td>
+            <td>
+              <input type='date' />
+            </td>
+            <td>
+              <button class='edit'>Edit</button>
+              <button class='delete'>Delete</button>
+            </td>
+         </tr> -->
+        </table>
+      </section>
     </main>
+  </body>
 
-    <!-- <script>
-      // Get all Events
-      fetch("http://localhost:3000/events")
-        .then((response) => response.json())
-        .then((json) => console.log('GET=>',json));
-
-      // Create a new Event
-      fetch("http://localhost:3000/events", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          eventName: "TEST",
-          startDate: "1641790800000",
-          endDate: "1641790800000",
-        }),
-      })
-        .then((response) => response.json())
-        .then((json) => console.log('post=>',json));
-
-      // Delete an exist Event
-      fetch("http://localhost:3000/events/1", {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      })
-        .then((response) => response.json())
-        .then((json) => console.log('DELETE=>',json));
-
-      //   // Update an exist Event
-      fetch("http://localhost:3000/events/2", {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          eventName: "TEST-CHANGED",
-          startDate: "1641790800000",
-          endDate: "1641790800000",
-        }),
-      })
-        .then((response) => response.json())
-        .then((json) => console.log('UPDATE=>',json));
-    </script> -->
   </body>
 </html>
