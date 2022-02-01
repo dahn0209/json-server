@@ -24,18 +24,26 @@ const addEvent = (event) =>
        .then((json) => console.log('post=>',json));
 /////delete task
 const deleteEvent = (id) =>
-  fetch([baseurl, path, id].join("/"), {       method: "DELETE" })
+  fetch([baseurl, path, id].join("/"),  {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json; charset=UTF-8",
+      },
+    })
   .then((json) => console.log('DELETE=>',json));
 
 ///// update event////
 const updateEvent = (event,id) =>
   fetch([baseurl, path, id]
-      .join("/"), {
-      method: "PUT",
-      body: JSON.stringify(event),
-      headers: {
-      "Content-type": "application/json",
-      },})
+      .join("/"),
+     {  method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Accept:  "application/json; charset=UTF-8",
+        },
+        body: JSON.stringify(event),
+      })
       .then((response) => response.json())
       .then((json) => console.log('UPDATE=>',json));
 
